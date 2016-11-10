@@ -6,6 +6,29 @@ app.directive('quiz', function(testFactory) {
 		restrict: 'EA',
 		scope: {},
 		templateUrl: 'template.html',
+		link: function(scope, elem, attrs) {
+			scope.start = function() {
+				scope.id= 0;
+				scope.testOver = false;
+				scope.inProgress = true;
+				scope.getQuestion();
+			}
+			scope.reset = function() {
+				scope.inProgress = false;
+				scope.score = 0;
+			}
+			scope.getQuestion = function() {
+				var q = testFactory.getQuestion(scope.id);
+				if (q) {
+						scope.question = q.question;
+						scope.choices = q.choices;
+						scope.answer = q.answer;
+						scope.answerMode = true;
+				} else {
+						scope.testOver = true;
+				}
+			}
+		}
 		
 	 };
  });
@@ -38,4 +61,13 @@ app.factory('testFactory', function() {
 			answer: [2]
 		}
 	]
+	return {
+		getQuestion: function(id) {
+			if (id < questions.length) {
+				return questions[id];
+			} else {
+				return false;
+			}
+		}
+	};
 })
