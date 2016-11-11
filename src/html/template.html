@@ -1,8 +1,8 @@
-<div class="quiz-area" ng-show="InProgress">
+<div class="quiz-area" ng-show="inProgress">
 	<div ng-show="!testOver">
 		<h3 id="question">{{ question }}></h3>
 			<ul id="options">
-				<li ng-reapeat="choice in choices">
+				<li ng-repeat="choice in choices">
 					<label>
 						<input type="checkbox" name="answer" value="{{choice}}" />
 						{{ choice }}

@@ -1,5 +1,5 @@
 // Javascript Entry Point
-var app = angular.module('quizApp', []);
+let app = angular.module('quizApp', []);
 
 app.directive('quiz', function(testFactory) {
  	return {
@@ -18,7 +18,7 @@ app.directive('quiz', function(testFactory) {
 				scope.score = 0;
 			}
 			scope.getQuestion = function() {
-				var q = testFactory.getQuestion(scope.id);
+				let q = testFactory.getQuestion(scope.id);
 				if (q) {
 						scope.question = q.question;
 						scope.choices = q.choices;
@@ -28,13 +28,24 @@ app.directive('quiz', function(testFactory) {
 						scope.testOver = true;
 				}
 			}
+			scope.checkAnswer = function() {
+				if (!$('input[name=answer]:checked').length) return;
+				let ans = $('input[name=answer]:checked').val();
+				if (ans == scope.options[scope.answer]) {
+					scope.score++;
+					scope.correctAnswer = true;
+				} else {
+					scope.correctAnswer = false;
+				}
+			scope.answerMode = false;
+			};		
 		}
 		
 	 };
  });
 
 app.factory('testFactory', function() {
-	var questions = [
+	let questions = [
 		{
 			question: "Which one has the most vitamin C?",
 			choices: ['Oranges', 'Strawberries', 'Mangos', 'Dragonfruit'],
