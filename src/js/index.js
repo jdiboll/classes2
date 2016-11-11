@@ -1,7 +1,7 @@
 // Javascript Entry Point
-let app = angular.module('quizApp', []);
+let app = angular.module('testApp', []);
 
-app.directive('quiz', function(testFactory) {
+app.directive('test', function(testFactory) {
  	return {
 		restrict: 'EA',
 		scope: {},
