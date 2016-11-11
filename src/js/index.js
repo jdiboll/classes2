@@ -31,14 +31,19 @@ app.directive('quiz', function(testFactory) {
 			scope.checkAnswer = function() {
 				if (!$('input[name=answer]:checked').length) return;
 				let ans = $('input[name=answer]:checked').val();
-				if (ans == scope.options[scope.answer]) {
+				if (ans == scope.choices[scope.answer]) {
 					scope.score++;
 					scope.correctAnswer = true;
 				} else {
 					scope.correctAnswer = false;
 				}
 			scope.answerMode = false;
-			};		
+			};	
+			scope.nextQuestion = function() {
+				scope.id++;
+				scope.getQuestion();
+			}	
+			scope.reset();
 		}
 		
 	 };
