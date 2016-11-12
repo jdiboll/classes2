@@ -7,12 +7,18 @@
 
 * {
 	list-style: none;
+	background-color: #eaf1f2;
+
 }
 
 body {
-	padding-top: 70px;
+	margin-top: 70px;
 }
 
 .test-space, .intro, h1 {
 	text-align: center;
+}
+
+h1 {
+	text-shadow: 1px 1px 2px black;
 }
