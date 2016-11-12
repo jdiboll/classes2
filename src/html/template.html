@@ -12,10 +12,10 @@
 				</li>
 			</ul>
 
-			<button type="button" class="btn btn-primary" ng-click="checkAnswer()" ng-show="answerMode">Submit</button>
+			<button id="submit" ng-click="checkAnswer()" ng-show="answerMode">Submit</button>
 
 	<div ng-show="!answerMode">
-		<button type="button" class="btn btn-success" ng-click="nextQuestion()" class="nextQuestion">Next</button>
+		<button id="next" ng-click="nextQuestion()" class="nextQuestion">Next</button>
 		<span ng-show="correctAnswer">Good Job!</span>
 		<span ng-show="!correctAnswer">Whoops!</span>
 	</div>
@@ -23,7 +23,7 @@
 	</div>
 	<div ng-show="testOver">
 		<h3>Thanks For Playing!</h3>
-		<button ng-click="reset()">Try Again</button>
+		<button id="again" ng-click="reset()">Try Again</button>
 	</div>
 	<div id="score">
 	Score: {{ score }}
@@ -32,5 +32,5 @@
 
 <div class="intro" ng-show="!inProgress">
 	<p>Let's See What Ya Got!!</p>
-	<button id="startup" ng-click="start()">Start</button>
+	<button id="startup" ng-click="start()" class="start">Start</button>
 </div>

@@ -15,10 +15,27 @@ body {
 	margin-top: 70px;
 }
 
-.test-space, .intro, h1 {
+ .intro, h1, h3 {
 	text-align: center;
 }
 
 h1 {
 	text-shadow: 1px 1px 2px black;
+}
+#startup, #submit, #next, #again {
+ 	color: #ffffff;
+ 	border: none;
+ 	border-radius: 4px;
+}
+#submit {
+	background-color: #e42e28;
+}
+#next {
+	background-color: #15a1ff;
+}
+#startup {
+	background-color: #ff6000;
+}
+#again {
+	background-color: #2c3f50;
 }
