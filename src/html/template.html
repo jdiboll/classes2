@@ -1,7 +1,9 @@
 <div class="test-space" ng-show="inProgress">
 	<div ng-show="!testOver">
+
 		<h3 id="question">{{ question }}</h3>
-			<ul id="options">
+
+			<ul id="choices">
 				<li ng-repeat="choice in choices">
 					<label>
 						<input type="checkbox" name="answer" value="{{choice}}" />
@@ -9,7 +11,9 @@
 					</label>
 				</li>
 			</ul>
+
 			<button ng-click="checkAnswer()" ng-show="answerMode">Submit</button>
+			
 	<div ng-show="!answerMode">
 		<button ng-click="nextQuestion()" class="nextQuestion">Next</button>
 		<span ng-show="correctAnswer">Good Job!</span>

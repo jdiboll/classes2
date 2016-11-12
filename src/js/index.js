@@ -72,7 +72,7 @@ app.factory('testFactory', function() {
 			answer: [3]
 		},
 		{
-			question: "'Human beings like success, but they hate succsessful people'... Who said it?",
+			question: "'Human beings like success, but they hate successful people'... Who said it?",
 			choices: ['Bill Hicks', 'Miley Cyrus', 'Carrot Top', 'Frank Sinatra'],
 			answer: [2]
 		}
